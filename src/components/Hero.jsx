@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -38,29 +39,35 @@ const Hero = () => {
           miirupan is your creative space to find collaborators, post projects, and track progress — all in one place.
         </motion.p>
 
-        {/* Button animation with micro-interactions */}
+        {/* Upgraded Feature: High-Contrast Navigation Actions Linked Blocks */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-8 flex flex-col sm:flex-row justify-center gap-4 items-center"
+          className="mt-8 flex flex-col sm:flex-row justify-center gap-4 items-center w-full max-w-md mx-auto"
         >
-          <motion.button 
-            whileHover={{ scale: 1.05, translateY: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto border-4 border-black bg-[#FF8000] text-black px-8 py-3.5 rounded-lg font-black hover:bg-[#FFD9B3] transition duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-          >
-            Get Started Free
-          </motion.button>
+          {/* Get Started Button Wrapper -> Navigates to /auth login screen */}
+          <Link to="/auth" className="w-full sm:w-auto block">
+            <motion.button 
+              whileHover={{ scale: 1.05, translateY: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto border-4 border-black bg-[#FF8000] text-black px-8 py-3.5 rounded-lg font-black hover:bg-[#FFD9B3] transition duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap"
+            >
+              Get Started Free
+            </motion.button>
+          </Link>
 
-          <motion.button 
-            whileHover={{ scale: 1.05, translateY: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto border-4 border-black bg-white text-black px-8 py-3.5 rounded-lg font-black hover:bg-[#FFD9B3] transition duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-          >
-            Explore Projects
-          </motion.button>
+          {/* Explore Projects Button Wrapper -> Navigates to /find-work deck */}
+          <Link to="/find-work" className="w-full sm:w-auto block">
+            <motion.button 
+              whileHover={{ scale: 1.05, translateY: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto border-4 border-black bg-white text-black px-8 py-3.5 rounded-lg font-black hover:bg-[#FFD9B3] transition duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap"
+            >
+              Explore Projects
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Platform Trust Stats Counter */}
