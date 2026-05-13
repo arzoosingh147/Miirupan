@@ -4,7 +4,7 @@ import { ArrowUp, Zap } from "lucide-react";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Community from "./Community";
-import PostProject from "./Postproject";
+import PostProject from "./PostProject";
 
 const Home = () => {
   const [showScrollBtn, setShowScrollBtn] = useState(false);
